@@ -23,5 +23,4 @@ public class Ticker {
     private String subsector;
     private String scaleCode;
     private String indexName;
-    // getter/setter
 }

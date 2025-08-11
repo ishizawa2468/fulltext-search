@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.SearchResult;
 import com.example.demo.entity.Ticker;
 import com.example.demo.service.TickerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,11 @@ public class TickerController {
 
     @Autowired
     private TickerService tickerService;
+
+    @GetMapping("/search")
+    public List<SearchResult> search(@RequestParam String query) {
+        return tickerService.search(query);
+    }
 
     @GetMapping
     public List<Ticker> getAll() {
