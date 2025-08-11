@@ -16,9 +16,19 @@ public class TickerController {
     @Autowired
     private TickerService tickerService;
 
-    @GetMapping("/search")
-    public List<SearchResult> search(@RequestParam String query) {
-        return tickerService.search(query);
+    @GetMapping("/search-like")
+    public List<SearchResult> searchLike(@RequestParam String query) {
+        return tickerService.searchLike(query);
+    }
+
+    @GetMapping("/search-or")
+    public List<SearchResult> searchOr(@RequestParam String query) {
+        return tickerService.searchOr(query);
+    }
+
+    @GetMapping("/search-and")
+    public List<SearchResult> searchAnd(@RequestParam String query) {
+        return tickerService.searchAnd(query);
     }
 
     @GetMapping
