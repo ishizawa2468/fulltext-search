@@ -23,3 +23,8 @@ run:
 
 clean:
 	./gradlew clean
+
+openapi:
+	echo 'Confirm the server is running...'
+	curl http://localhost:8080/api-docs.yaml -o openapi.yml
+
